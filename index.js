@@ -28,7 +28,7 @@ module.exports = (mongoose, url) => new Promise((resolve, reject) => {
   signale.info(`Connecting to database: ${dbName}`);
   mongoose.set('useCreateIndex', true);
   mongoose.set('useNewUrlParser', true);
-  mongoose.connect(url, {
+  return mongoose.connect(url, {
     autoReconnect: true,
     reconnectTries: 1000000,
     reconnectInterval: 3000
