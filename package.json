@@ -1,7 +1,7 @@
 {
   "name": "@knorcedger/mongoose-connect",
   "version": "1.0.0",
-  "description": "Use Mongoose to connect to a MongoDB",
+  "description": "Avoid mongoose connect boilerplate",
   "main": "index.js",
   "scripts": {
     "test": "npm run eslint",
