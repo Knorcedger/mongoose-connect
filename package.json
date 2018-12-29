@@ -1,6 +1,6 @@
 {
   "name": "@knorcedger/mongoose-connect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Avoid mongoose connect boilerplate",
   "main": "index.js",
   "scripts": {
