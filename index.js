@@ -3,7 +3,7 @@ const signale = require('signale');
 module.exports = (mongoose, url) => new Promise((resolve, reject) => {
   mongoose.connection.on('connected', () => {
     signale.info('Connection Established');
-    resolve();
+    resolve('Connected');
   });
 
   mongoose.connection.on('reconnected', () => {
@@ -20,7 +20,7 @@ module.exports = (mongoose, url) => new Promise((resolve, reject) => {
 
   mongoose.connection.on('error', error => {
     signale.info(`ERROR: ${error}`);
-    reject();
+    reject(error);
   });
 
   const dbName = url.substr(url.lastIndexOf('/') + 1, url.length);
