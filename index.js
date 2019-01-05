@@ -23,6 +23,14 @@ module.exports = (mongoose, url) => new Promise((resolve, reject) => {
     reject(error);
   });
 
+  if (!mongoose) {
+    throw new Error('Please provide a valid mongoose instance');
+  }
+
+  if (!url) {
+    throw new Error('Please provide a valid database url');
+  }
+
   const dbName = url.substr(url.lastIndexOf('/') + 1, url.length);
 
   signale.info(`Connecting to database: ${dbName}`);
