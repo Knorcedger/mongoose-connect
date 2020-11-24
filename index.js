@@ -31,7 +31,7 @@ module.exports = (mongoose, url) => new Promise((resolve, reject) => {
     throw new Error('Please provide a valid database url');
   }
 
-  const dbName = url.substr(url.lastIndexOf('/') + 1, url.length);
+  const dbName = url.substring(url.lastIndexOf('/') + 1, url.indexOf('?') !== -1 ? url.indexOf('?') : url.length);
 
   signale.info(`Connecting to database: ${dbName}`);
   mongoose.set('useCreateIndex', true);
