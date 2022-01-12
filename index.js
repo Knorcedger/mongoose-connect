@@ -38,14 +38,8 @@ module.exports = (mongoose, url) =>
     );
 
     signale.info(`Connecting to database: ${dbName}`);
-    mongoose.set("useCreateIndex", true);
-    mongoose.set("useNewUrlParser", true);
-    mongoose.set("useFindAndModify", false);
 
     return mongoose.connect(url, {
-      autoReconnect: true,
-      reconnectTries: 1000000,
-      reconnectInterval: 3000,
       useNewUrlParser: true,
     });
   });
